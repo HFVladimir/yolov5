@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
             }).start();
 
         });
-        this.sourceBitmap = Utils.getBitmapFromAsset(MainActivity.this, "kite.jpg");
+        this.sourceBitmap = Utils.getBitmapFromAsset(MainActivity.this, "test.jpg");
 
         this.cropBitmap = Utils.processBitmap(sourceBitmap, TF_OD_API_INPUT_SIZE);
 
@@ -76,13 +76,13 @@ public class MainActivity extends AppCompatActivity {
 
     private static final Logger LOGGER = new Logger();
 
-    public static final int TF_OD_API_INPUT_SIZE = 640;
+    public static final int TF_OD_API_INPUT_SIZE = 320;
 
     private static final boolean TF_OD_API_IS_QUANTIZED = false;
 
-    private static final String TF_OD_API_MODEL_FILE = "yolov5s.tflite";
+    private static final String TF_OD_API_MODEL_FILE = "best-fp16-320.tflite";
 
-    private static final String TF_OD_API_LABELS_FILE = "file:///android_asset/coco.txt";
+    private static final String TF_OD_API_LABELS_FILE = "file:///android_asset/item.txt";
 
     // Minimum detection confidence to track a detection.
     private static final boolean MAINTAIN_ASPECT = true;

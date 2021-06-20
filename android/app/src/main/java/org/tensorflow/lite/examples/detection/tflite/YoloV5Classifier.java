@@ -236,7 +236,7 @@ public class YoloV5Classifier implements Classifier {
     // Number of threads in the java app
     private static final int NUM_THREADS = 1;
     private static boolean isNNAPI = false;
-    private static boolean isGPU = false;
+    private static boolean isGPU = true;
 
     private boolean isModelQuantized;
 
@@ -407,9 +407,9 @@ public class YoloV5Classifier implements Classifier {
                 }
             }
             // Denormalize xywh
-            for (int j = 0; j < 4; ++j) {
-                out[0][i][j] *= getInputSize();
-            }
+//            for (int j = 0; j < 4; ++j) {
+//                out[0][i][j] *= getInputSize();
+//            }
         }
         for (int i = 0; i < output_box; ++i){
             final int offset = 0;
